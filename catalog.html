@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <title>Глейси — Каталог</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <svg style="display: none;">
@@ -14,135 +16,143 @@
         <path d="M6 14.875L12.917 9.5 6 4.125v2.917H-.042v4.917H6z"></path><path d="M18 0H5C3.9 0 3 .9 3 2v2h2V2h13v15H5v-2H3v2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z"></path>
       </symbol>
       <symbol id="icon-cart-empty" viewBox="0 0 21 20">
-        <g fill="#FFF"><path d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"></path><circle cx="6.984" cy="18" r="2"></circle><circle cx="15.984" cy="18" r="2"></circle></g>
+        <path d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"></path><circle cx="6.984" cy="18" r="2"></circle><circle cx="15.984" cy="18" r="2"></circle>
       </symbol>
-      <symbol id="icon-cart-with-items" viewBox="0 0 21 20">
+      <symbol id="icon-cart-with-goods" viewBox="0 0 21 20">
         <path fill="#E84D37" d="M5.888 4.031L6.922 13h10.45l1.176-8.969z"></path><circle fill="#343434" cx="6.984" cy="18" r="2"></circle><circle fill="#343434" cx="15.984" cy="18" r="2"></circle><path fill="#343434" d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"></path>
       </symbol>
     </svg>
-    <div class="content-wrapper">
-      <header class="page-header">
-        <div class="page-header__top">
-          <a class="page-header__logo" href="index.html">
-            <img class="page-header__logo-image" src="http://via.placeholder.com/154x64" width="154" height="64" alt="Логотип магазина «Глейси»: перейти на главную страницу">
-          </a>
-          <nav class="main-nav">
-            <ul class="main-nav__list site-list">
-              <li class="site-list__item site-list__item--current">
-                <a class="site-list__link" href="#">Каталог</a>
-                <ul class="site-list__submenu submenu">
-                  <li class="submenu__item submenu__item--new">
-                    <a class="submenu__link" href="#">Новинки</a>
-                  </li>
-                  <li class="submenu__item submenu__item--current">
-                    <a class="submenu__link">Сливочное</a>
-                  </li>
-                  <li class="submenu__item">
-                    <a class="submenu__link" href="#">Щербеты</a>
-                  </li>
-                  <li class="submenu__item">
-                    <a class="submenu__link" href="#">Фруктовый лед</a>
-                  </li>
-                  <li class="submenu__item">
-                    <a class="submenu__link" href="#">Мелорин</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="site-list__item">
-                <a class="site-list__link" href="#">Доставка и оплата</a>
-              </li>
-              <li class="site-list__item">
-                <a class="site-list__link" href="index.html#company">О Компании</a>
-              </li>
-            </ul>
-          </nav>
-          <form class="page-header__search search" action="#" method="post" role="search">
-            <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
-            <label class="visually-hidden" for="search-field">Что ищем?</label>
-            <button class="search__submit" type="submit">
-              <span class="visually-hidden">Найти</span>
-              <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation">
-                <use xlink:href="#icon-search"></use>
-              </svg>
-            </button>
-          </form>
-          <ul class="page-header__list user-list">
-            <li class="user-list__item">
-              <a class="user-list__link user-list__link--login" href="#">
-                <span>Вход</span>
-                <svg class="user-list__icon" width="21" height="19" aria-hidden="true" role="presentation">
-                  <use xlink:href="#icon-login"></use>
-                </svg>
-              </a>
-              <form class="user-list__login-form login-form" action="#" method="post" aria-labelledby="login-form-heading">
-                <b class="visually-hidden" id="login-form-heading">Личный кабинет</b>
-                <ul class="login-form__list">
-                  <li class="login-form__item">
-                    <input class="login-form__input" type="email" name="login" id="login-field" placeholder="Электронная почта">
-                    <label class="visually-hidden" for="login-field">Электронная почта</label>
-                  </li>
-                  <li class="login-form__item">
-                    <input class="login-form__input" type="password" name="password" id="password-field" placeholder="Пароль">
-                    <label class="visually-hidden" for="password-field">Пароль</label>
-                  </li>
-                </ul>
-                <button class="login-form__button button button--login-form" type="submit">Войти</button>
-                <ul class="login-form__spare-menu">
-                  <li>
-                    <a class="login-form__link" href="#">Забыли пароль?</a>
-                  </li>
-                  <li>
-                    <a class="login-form__link" href="#">Новая регистрация</a>
-                  </li>
-                </ul>
-              </form>
+    <div class="wrapper">
+      <header class="page-header page-header--inner-page">
+        <a class="page-header__logo" href="index.html">
+          <img class="page-header__logo-image" src="img/logo-gllacy.svg" width="154" height="64" alt="Логотип магазина «Глейси»: перейти на главную страницу">
+        </a>
+        <nav class="main-nav">
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item site-list__item--current">
+              <a class="site-list__link" href="#">Каталог</a>
+              <ul class="site-list__submenu submenu">
+                <li class="submenu__item submenu__item--new">
+                  <a class="submenu__link" href="#">Новинки</a>
+                </li>
+                <li class="submenu__item submenu__item--current">
+                  <a class="submenu__link">Сливочное</a>
+                </li>
+                <li class="submenu__item">
+                  <a class="submenu__link" href="#">Щербеты</a>
+                </li>
+                <li class="submenu__item">
+                  <a class="submenu__link" href="#">Фруктовый лед</a>
+                </li>
+                <li class="submenu__item">
+                  <a class="submenu__link" href="#">Мелорин</a>
+                </li>
+              </ul>
             </li>
-            <li class="user-list__item user-list__item--cart cart">
-              <a class="user-list__link cart__link cart__link--with-items" href="#">
-                <span class="visually-hidden">Корзина:</span>
-                <span class="cart__text">2 товара</span>
-                <svg class="cart__icon cart__icon--with-items" width="21" height="20" aria-hidden="true" role="presentation">
-                  <use xlink:href="#icon-cart-with-items"></use>
-                </svg>
-              </a>
-              <form class="cart__form" action="#" method="post" aria-labelledby="cart-form-heading">
-                <b class="visually-hidden" id="cart-form-heading">В вашей корзине:</b>
-                <table class="cart__list">
-                  <tbody>
-                    <tr class="cart__item">
-                      <td class="cart__data cart__data--delete">
-                        <input class="cart__checkbox visually-hidden" type="checkbox" name="product-1" id="product-1-field" value="product-1" checked>
-                        <label class="cart__label" for="product-1-field">
-                          <span class="visually-hidden">Отменить пломбир с апельсиновым джемом</span>
-                        </label>
-                      </td>
-                      <td class="cart__data cart__data--product">Пломбир с апельсиновым джемом</td>
-                      <td class="cart__data cart__data--amount">1,5 кг х <span>200 руб.</span></td>
-                      <td class="cart__data cart__data--price">300 руб.</td>
-                    </tr>
-                    <tr class="cart__item">
-                      <td class="cart__data cart__data--delete">
-                        <input class="cart__checkbox visually-hidden" type="checkbox" name="product-2" id="product-2-field" value="product-2" checked>
-                        <label class="cart__label" for="product-2-field">
-                          <span class="visually-hidden">Отменить клубничный пломбир с присыпкой из белого шоколада</span>
-                        </label>
-                      </td>
-                      <td class="cart__data cart__data--product">Клубничный пломбир с присыпкой из белого шоколада</td>
-                      <td class="cart__data cart__data--amount">1,5 кг х <span>300 руб.</span></td>
-                      <td class="cart__data cart__data--price">450 руб.</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr class="cart__total">
-                      <td class="cart__data cart__data--total" colspan="4">Итого: <span>750 руб.</span></td>
-                    </tr>
-                  </tfoot>
-                </table>
-                <button class="cart__button button button--cart-submit" type="submit">Оформить заказ</button>
-              </form>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="index.html#company">О Компании</a>
             </li>
           </ul>
-        </div>
+        </nav>
+        <form class="page-header__search search" action="#" method="post" role="search">
+          <p>
+            <label class="search__label">
+              <span class="visually-hidden">Что ищем?</span>
+              <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
+            </label>
+          </p>
+          <button class="search__submit" type="submit">
+            <span class="visually-hidden">Найти</span>
+            <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation">
+              <use xlink:href="#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <ul class="page-header__list user-list">
+          <li class="user-list__item user-list__item--login">
+            <a class="user-list__link" href="#">
+              <span class="user-list__text">Вход</span>
+              <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation">
+                <use xlink:href="#icon-login"></use>
+              </svg>
+            </a>
+            <form class="user-list__form login-form" action="#" method="post" aria-labelledby="login-form-heading">
+              <b class="visually-hidden" id="login-form-heading">Личный кабинет</b>
+              <ul class="login-form__list">
+                <li class="login-form__item">
+                  <input class="login-form__input" type="email" name="login" id="login-field" placeholder="Электронная почта">
+                  <label class="visually-hidden" for="login-field">Электронная почта</label>
+                </li>
+                <li class="login-form__item">
+                  <input class="login-form__input" type="password" name="password" id="password-field" placeholder="Пароль">
+                  <label class="visually-hidden" for="password-field">Пароль</label>
+                </li>
+              </ul>
+              <button class="login-form__button button button--login-form" type="submit">Войти</button>
+              <ul class="login-form__spare-menu">
+                <li>
+                  <a class="login-form__link" href="#">Забыли пароль?</a>
+                </li>
+                <li>
+                  <a class="login-form__link" href="#">Новая регистрация</a>
+                </li>
+              </ul>
+            </form>
+          </li>
+          <li class="user-list__item user-list__item--with-goods">
+            <a class="user-list__link" href="#">
+              <span class="visually-hidden">Корзина:</span>
+              <span class="user-list__text">2 товара</span>
+              <svg class="user-list__icon user-list__icon--with-goods" width="21" height="20" aria-hidden="true" role="presentation">
+                <use xlink:href="#icon-cart-with-goods"></use>
+              </svg>
+            </a>
+            <form class="user-list__form cart" action="#" method="post" aria-labelledby="cart-form-heading">
+              <b class="visually-hidden" id="cart-form-heading">В вашей корзине:</b>
+              <table class="cart__list">
+                <tbody>
+                  <tr class="cart__item">
+                    <td class="cart__data cart__data--delete">
+                      <input class="cart__checkbox visually-hidden" type="checkbox" name="product-1" id="product-1-field" value="product-1" checked>
+                      <label class="cart__label" for="product-1-field">
+                        <span class="visually-hidden">Отменить пломбир с апельсиновым джемом</span>
+                      </label>
+                    </td>
+                    <td class="cart__data cart__data--preview">
+                      <img class="cart__preview-image" src="img/ice-cream-small-1.jpg" width="33" height="33" alt="Пломбир с апельсиновым джемом">
+                    </td>
+                    <td class="cart__data cart__data--product">Пломбир с апельсиновым джемом</td>
+                    <td class="cart__data cart__data--amount">1,5 кг х <span>200 руб.</span></td>
+                    <td class="cart__data cart__data--price">300 руб.</td>
+                  </tr>
+                  <tr class="cart__item">
+                    <td class="cart__data cart__data--delete">
+                      <input class="cart__checkbox visually-hidden" type="checkbox" name="product-2" id="product-2-field" value="product-2" checked>
+                      <label class="cart__label" for="product-2-field">
+                        <span class="visually-hidden">Отменить клубничный пломбир с присыпкой из белого шоколада</span>
+                      </label>
+                    </td>
+                    <td class="cart__data cart__data--preview">
+                      <img class="cart__preview-image" src="img/ice-cream-small-2.jpg" width="33" height="33" alt="Клубничный пломбир с присыпкой из белого шоколада">
+                    </td>
+                    <td class="cart__data cart__data--product">Клубничный пломбир с присыпкой из белого шоколада</td>
+                    <td class="cart__data cart__data--amount">1,5 кг х <span>300 руб.</span></td>
+                    <td class="cart__data cart__data--price">450 руб.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="cart__total">
+                    <td class="cart__data cart__data--total" colspan="5">Итого: <span>750 руб.</span></td>
+                  </tr>
+                </tfoot>
+              </table>
+              <button class="cart__button button button--cart-submit" type="submit">Оформить заказ</button>
+            </form>
+          </li>
+        </ul>
         <p class="page-header__contact-phone">
           С 10 до 20, ежедневно
           <b class="page-header__phone-number">8 812 450-25-25</b>
@@ -165,7 +175,7 @@
             <fieldset class="filter-form__fieldset filter-form__fieldset--sort">
               <legend class="filter-form__legend">Сортировка:</legend>
               <select class="filter-form__select" name="sort" id="sort-select">
-                <option value="popularity">По популярности</option>
+                <option value="popularity" selected>По популярности</option>
                 <option value="first-inexpensive">Сначала недорогие</option>
                 <option value="first-expensive">Сначала дорогие</option>
                 <option value="fat">По жирности</option>
