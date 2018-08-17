@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="body body--background-1">
     <svg style="display: none;">
       <symbol id="icon-search" viewBox="0 0 17 17">
         <path d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"></path>
@@ -23,14 +23,14 @@
       </symbol>
     </svg>
     <header class="page-header">
-      <div class="wrapper">
-        <div class="page-header__container">
+      <div class="page-header__wrapper wrapper">
+        <div class="page-header__top">
           <a class="page-header__logo">
             <img class="page-header__logo-image" src="img/logo-gllacy.svg" width="154" height="64" alt="Логотип магазина «Глейси»">
           </a>
           <nav class="main-nav">
             <ul class="main-nav__list site-list">
-              <li class="site-list__item">
+              <li class="site-list__item has-drop no-js">
                 <a class="site-list__link" href="#">Каталог</a>
                 <ul class="site-list__submenu submenu">
                   <li class="submenu__item submenu__item--new">
@@ -59,12 +59,10 @@
             </ul>
           </nav>
           <form class="page-header__search search" action="#" method="post" role="search">
-            <p>
-              <label class="search__label">
-                <span class="visually-hidden">Что ищем?</span>
-                <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
-              </label>
-            </p>
+            <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
+            <label class="search__label" for="search-field">
+              <span class="visually-hidden">Что ищем?</span>
+            </label>
             <button class="search__submit" type="submit">
               <span class="visually-hidden">Найти</span>
               <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation">
@@ -73,7 +71,7 @@
             </button>
           </form>
           <ul class="page-header__list user-list">
-            <li class="user-list__item user-list__item--login">
+            <li class="user-list__item user-list__item--login has-drop no-js">
               <a class="user-list__link" href="#">
                 <span  class="user-list__text">Вход</span>
                 <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation">
@@ -92,7 +90,9 @@
                     <label class="visually-hidden" for="password-field">Пароль</label>
                   </li>
                 </ul>
-                <button class="login-form__button button button--login-form" type="submit">Войти</button>
+                <button class="login-form__button button button--login-form" type="submit">
+                  <span class="button__text">Войти</span>
+                </button>
                 <ul class="login-form__spare-menu">
                   <li>
                     <a class="login-form__link" href="#">Забыли пароль?</a>
@@ -108,16 +108,16 @@
                 <span class="visually-hidden">Корзина:</span>
                 <span class="user-list__text">Пусто</span>
                 <svg class="user-list__icon user-list__icon--empty-cart" width="21" height="20" aria-hidden="true" role="presentation">
-                <use xlink:href="#icon-cart-empty"></use>
-              </svg>
+                  <use xlink:href="#icon-cart-empty"></use>
+                </svg>
               </a>
             </li>
           </ul>
-          <p class="page-header__contact-phone">
-            С 10 до 20, ежедневно
-            <b class="page-header__phone-number">8 812 450-25-25</b>
-          </p>
         </div>
+        <p class="page-header__contact-phone">
+          С 10 до 20, ежедневно
+          <b class="page-header__phone-number">8 812 450-25-25</b>
+        </p>
       </div>
     </header>
     <main>
@@ -128,7 +128,7 @@
           <div class="best-deals__slider slider">
             <ul class="slider__controls">
               <li>
-                <button class="slider__control" type="button">
+                <button class="slider__control slider__control--active" type="button">
                   <span class="visually-hidden">Первый слайд</span>
                 </button>
               </li>
@@ -144,17 +144,17 @@
               </li>
             </ul>
             <div class="slider__inner">
-              <ul class="best-deals__list slider__list">
+              <ul class="best-deals__list slider__list slider__list--show-1">
                 <li class="best-deals__item slider__item">
-                  <p class="best-deals__title">Крем-брюле и пломбир с малиновым джемом</p>
+                  <p class="best-deals__title">Крем-брюле и пломбир с&nbsp;малиновым джемом</p>
                   <a class="best-deals__button button button--best-deals" href="#">Давайте оба!</a>
                 </li>
                 <li class="best-deals__item slider__item">
-                  <p class="best-deals__title">Шоколадный пломбир и лимонный сорбет</p>
+                  <p class="best-deals__title">Шоколадный пломбир и&nbsp;лимонный сорбет</p>
                   <a class="best-deals__button button button--best-deals" href="#">Давайте оба!</a>
                 </li>
                 <li class="best-deals__item slider__item">
-                  <p class="best-deals__title">Пломбир с помадкой и клубничный щербет</p>
+                  <p class="best-deals__title">Пломбир с помадкой и&nbsp;клубничный щербет</p>
                   <a class="best-deals__button button button--best-deals" href="#">Давайте оба!</a>
                 </li>
               </ul>
@@ -163,12 +163,12 @@
           <ul class="best-deals__banners">
             <li class="best-deals__banner banner">
               <b class="banner__slogan">Малинка даром!</b>
-              <p class="banner__description">При покупке 2 кг любого фруктового мороженого добавим в ваш заказ банку малинового варенья бесплатно.</p>
+              <p class="banner__description">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
               <a class="banner__button button button--banner" href="#">Хочу варенье!</a>
             </li>
             <li class="best-deals__banner banner">
               <b class="banner__slogan">Шоколадки даром!</b>
-              <p class="banner__description">При покупке 2 кг пломбира добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+              <p class="banner__description">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
               <a class="banner__button button button--banner" href="#">Хочу шоколадки!</a>
             </li>
           </ul>
@@ -178,7 +178,7 @@
           <h2 class="visually-hidden">Наши хиты</h2>
           <ul class="hits__list">
             <li class="hits__item">
-              <article class="product">
+              <article class="product no-js">
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                 </h3>
@@ -186,16 +186,18 @@
                   <span class="visually-hidden">Хит</span>
                 </p>
                 <p class="product__illustration">
-                 <img class="product__image" src="http://via.placeholder.com/200x200" width="200" height="200" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+                  <img class="product__image" src="img/ice-cream-1.jpg" width="200" height="200" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
                 </p>
-                <p class="product__price">310 р<span>/кг</span></p>
-                <p class="product__hover">
+                <p class="product__price">
+                  310<span class="visually-hidden">р.</span><span class="product__per-kilo">/кг</span>
+                </p>
+                <p class="product__hover-wrapper">
                   <a class="product__button button button--product" href="#">Быстрый просмотр</a>
                 </p>
               </article>
             </li>
             <li class="hits__item">
-              <article class="product">
+              <article class="product no-js">
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-кофейное с кусочками шоколада</a>
                 </h3>
@@ -203,16 +205,18 @@
                   <span class="visually-hidden">Хит</span>
                 </p>
                 <p class="product__illustration">
-                 <img class="product__image" src="http://via.placeholder.com/200x200" width="200" height="200" alt="Сливочно-кофейное с кусочками шоколада">
+                 <img class="product__image" src="img/ice-cream-2.jpg" width="200" height="200" alt="Сливочно-кофейное с кусочками шоколада">
                 </p>
-                <p class="product__price">380 р<span>/кг</span></p>
-                <p class="product__hover">
+                <p class="product__price">
+                  380<span class="visually-hidden">р.</span><span class="product__per-kilo">/кг</span>
+                </p>
+                <p class="product__hover-wrapper">
                   <a class="product__button button button--product" href="#">Быстрый просмотр</a>
                 </p>
               </article>
             </li>
             <li class="hits__item">
-              <article class="product">
+              <article class="product no-js">
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                 </h3>
@@ -220,16 +224,18 @@
                   <span class="visually-hidden">Хит</span>
                 </p>
                 <p class="product__illustration">
-                 <img class="product__image" src="http://via.placeholder.com/200x200" width="200" height="200" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+                 <img class="product__image" src="img/ice-cream-3.jpg" width="200" height="200" alt="Сливочно-клубничное с присыпкой из белого шоколада">
                 </p>
-                <p class="product__price">355 р<span>/кг</span></p>
-                <p class="product__hover">
+                <p class="product__price">
+                  355<span class="visually-hidden">р.</span><span class="product__per-kilo">/кг</span>
+                </p>
+                <p class="product__hover-wrapper">
                   <a class="product__button button button--product" href="#">Быстрый просмотр</a>
                 </p>
               </article>
             </li>
             <li class="hits__item">
-              <article class="product">
+              <article class="product no-js">
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
                 </h3>
@@ -237,10 +243,12 @@
                   <span class="visually-hidden">Хит</span>
                 </p>
                 <p class="product__illustration">
-                 <img class="product__image" src="http://via.placeholder.com/200x200" width="200" height="200" alt="Сливочное крем-брюле с карамельной подливкой">
+                 <img class="product__image" src="img/ice-cream-4.jpg" width="200" height="200" alt="Сливочное крем-брюле с карамельной подливкой">
                 </p>
-                <p class="product__price">415 р<span>/кг</span></p>
-                <p class="product__hover">
+                <p class="product__price">
+                  415<span class="visually-hidden">р.</span><span class="product__per-kilo">/кг</span>
+                </p>
+                <p class="product__hover-wrapper">
                   <a class="product__button button button--product" href="#">Быстрый просмотр</a>
                 </p>
               </article>
@@ -250,12 +258,12 @@
 
         <section class="company" id="company">
           <h2 class="visually-hidden">О компании</h2>
-          <p class="company__intro">Магазин Глейси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p>
+          <p class="company__intro">Магазин Глейси &ndash; это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</p>
           <ul class="company__list">
-            <li class="company__item company__item--icecream">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+            <li class="company__item company__item--ice-cream">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
             <li class="company__item company__item--farm">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
             <li class="company__item company__item--natural">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
-            <li class="company__item company__item--thermostat">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+            <li class="company__item company__item--thermostat">Доставка нашего мороженого до заказчиков осуществляется в&nbsp;специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
           </ul>
         </section>
 
@@ -263,16 +271,18 @@
           <h2 class="visually-hidden">Новости</h2>
           <article class="news__preview article-preview">
             <h3 class="article-preview__title">
-              <a class="article-preview__link" href="#">10  способов сервировки фруктовых щербетов к столу</a>
+              <a class="article-preview__link" href="#">10 способов сервировки фруктовых щербетов к столу</a>
             </h3>
             <p class="article-preview__category">Новое в нашем блоге</p>
           </article>
           <form class="news__subscribe subscribe-form" action="#" method="post" aria-labelledby="subscribe-form-heading">
             <b class="visually-hidden" id="subscribe-form-heading">Рассылка</b>
-            <p class="subscribe-form__info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+            <p class="subscribe-form__info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
             <input class="subscribe-form__input" type="email" name="subscribe" id="subscribe-field" placeholder="Электронная почта">
-            <label class="subscribe-form__label" for="subscribe-field">Электронная почта</label>
-            <button class="subscribe-form__button button button--subscribe-form" type="submit">Отправить</button>
+            <label class="visually-hidden" for="subscribe-field">Электронная почта</label>
+            <button class="subscribe-form__button button button--subscribe-form" type="submit">
+              <span class="button__text">Отправить</span>
+            </button>
           </form>
         </section>
       </div>
@@ -363,7 +373,9 @@
             <label class="feedback-form__label" for="message-field">Напишите что-нибудь...</label>
           </li>
         </ul>
-        <button class="feedback-form__button button button--feedback-form" type="submit">Отправить</button>
+        <button class="feedback-form__button button button--feedback-form" type="submit">
+          <span class="button__text">Отправить</span>
+        </button>
       </form>
       <button class="modal__close" type="button">
         <span class="visually-hidden">Закрыть окно</span>
