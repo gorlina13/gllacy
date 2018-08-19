@@ -289,70 +289,72 @@
 
       <section class="contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
-        <div class="contacts__map map">
-          <p class="map__illustration">
-            <img class="map__image" src="http://via.placeholder.com/1200x430" width="1200" height="430" alt="Расположение на карте: Санкт-Петербург, ул. Большая Конюшенная, д. 19/8">
+        <div class="contacts__wrapper wrapper">
+          <p class="contacts__illustration">
+            <img class="contacts__image" src="img/map.jpg" width="1200" height="430" alt="Главный офис на карте: Санкт-Петербург, ул. Большая Конюшенная, д. 19">
           </p>
-          <p class="map__interactive-area"></p>
+          <div class="contacts__info">
+            <p class="contacts__text">
+              Адрес главного офиса<br>и офлайн магазина:
+              <b class="contacts__details">ул.&nbsp;Большая Конюшенная 19/8,&nbsp;Санкт-Петербург</b>
+            </p>
+            <p class="contacts__text">
+              Для заказов по телефону:
+              <b class="contacts__details contacts__details--tel">8 812 450-25-25</b>
+              (с 10 до 20 ежедневно)
+            </p>
+            <a class="contacts__button button button--contacts" href="#">Форма обратной связи</a>
+          </div>
         </div>
-        <div class="contacts__info">
-          <p class="contacts__text">
-            Адрес главного офиса<br>и офлайн магазина:
-            <b class="contacts__address">ул.&nbsp;Большая Конюшенная 19/8,&nbsp;Санкт-Петербург</b>
-          </p>
-          <p class="contacts__text">
-            Для заказов по телефону:
-            <b class="contact__phone">8 812 450-25-25</b>
-            (с 10 до 20 ежедневно)
-          </p>
-          <a class="contacts__button button button--contacts" href="#">Форма обратной связи</a>
-        </div>
+        <div class="contacts__interactive-map"></div>
       </section>
     </main>
 
     <footer class="page-footer">
-      <ul class="page-footer__social-list social-list">
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
-            <span class="visually-hidden">Twitter</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com">
-            <span class="visually-hidden">Instagram</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
-            <span class="visually-hidden">Facebook</span>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--vkontakte" href="https://vk.com">
-            <span class="visually-hidden">Вконтакте</span>
-          </a>
-        </li>
-      </ul>
-      <ul class="page-footer__info-list info-list">
-        <li class="info-list__item">
-          <a class="info-list__link info-list__link--heart" href="#">Для поставщиков</a>
-        </li>
-        <li class="info-list__item">
-          <a class="info-list__link" href="#">О производстве</a>
-        </li>
-        <li class="info-list__item">
-          <a class="info-list__link" href="#">Наши документы</a>
-        </li>
-        <li class="info-list__item">
-          <a class="info-list__link" href="#">Экологические стандарты</a>
-        </li>
-      </ul>
-      <p class="page-footer__copyright copyright">
-        <span class="copyright__logo">
-          <img class="copyright__logo-image" src="http://via.placeholder.com/109x38" width="108" height="39" alt="Переход на сайт в HTML Academy">
-        </span>
-        <span class="copyright__text">Сделано в <a class="copyright__link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</span>
-      </p>
+      <div class="page-footer__wrapper wrapper">
+        <ul class="page-footer__social-list social-list">
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--twitter" href="https://twitter.com">
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com">
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com">
+              <span class="visually-hidden">Facebook</span>
+            </a>
+          </li>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--vkontakte" href="https://vk.com">
+              <span class="visually-hidden">Вконтакте</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="page-footer__info-list info-list">
+          <li class="info-list__item">
+            <a class="info-list__link info-list__link--heart" href="#">Для поставщиков</a>
+          </li>
+          <li class="info-list__item">
+            <a class="info-list__link" href="#">Наши документы</a>
+          </li>
+          <li class="info-list__item">
+            <a class="info-list__link" href="#">О производстве</a>
+          </li>
+          <li class="info-list__item">
+            <a class="info-list__link" href="#">Экологические стандарты</a>
+          </li>
+        </ul>
+        <p class="page-footer__copyright copyright">
+          <span class="copyright__logo">
+            <img class="copyright__logo-image" src="http://via.placeholder.com/109x38" width="108" height="39" alt="Переход на сайт в HTML Academy">
+          </span>
+          <span class="copyright__text">Сделано в <a class="copyright__link" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</span>
+        </p>
+      </div>
     </footer>
 
     <section class="modal modal--feedback">
@@ -381,7 +383,9 @@
         <span class="visually-hidden">Закрыть окно</span>
       </button>
     </section>
-
     <div class="overlay"></div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPChudeBDq6E5cWVAiQcCxzzbQm4o-93c&callback=initMap"></script>
+    <script src="js/map.js"></script>
   </body>
 </html>
