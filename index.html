@@ -94,11 +94,11 @@
                 <b class="visually-hidden" id="login-form-heading">Личный кабинет</b>
                 <ul class="login-form__list">
                   <li class="login-form__item">
-                    <input class="login-form__input" type="email" name="login" id="login-field" placeholder="Электронная почта">
+                    <input class="login-form__input text-input" type="email" name="login" id="login-field" placeholder="Электронная почта">
                     <label class="visually-hidden" for="login-field">Электронная почта</label>
                   </li>
                   <li class="login-form__item">
-                    <input class="login-form__input" type="password" name="password" id="password-field" placeholder="Пароль">
+                    <input class="login-form__input text-input" type="password" name="password" id="password-field" placeholder="Пароль">
                     <label class="visually-hidden" for="password-field">Пароль</label>
                   </li>
                 </ul>
@@ -290,7 +290,7 @@
           <form class="news__subscribe subscribe-form" action="#" method="post" aria-labelledby="subscribe-form-heading">
             <b class="visually-hidden" id="subscribe-form-heading">Рассылка</b>
             <p class="subscribe-form__info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
-            <input class="subscribe-form__input" type="email" name="subscribe" id="subscribe-field" placeholder="Электронная почта">
+            <input class="subscribe-form__input text-input" type="email" name="subscribe" id="subscribe-field" placeholder="Электронная почта">
             <label class="visually-hidden" for="subscribe-field">Электронная почта</label>
             <button class="subscribe-form__button button button--subscribe-form" type="submit">
               <span class="button__text">Отправить</span>
@@ -387,16 +387,16 @@
         <b class="feedback-form__tagline" id="feedback-form-heading">Мы обязательно вам ответим!</b>
         <ul class="feedback-form__list">
           <li class="feedback-form__item">
-            <input class="feedback-form__input" type="text" name="name" id="name-field" placeholder="Как вас зовут?">
-            <label class="feedback-form__label" for="name-field">Как вас зовут?</label>
+            <input class="feedback-form__input text-input" type="text" name="name" id="name-field" placeholder="Как вас зовут?">
+            <label class="visually-hidden" for="name-field">Как вас зовут?</label>
           </li>
           <li class="feedback-form__item">
-            <input class="feedback-form__input" type="email" name="feedback-email" id="feedback-email-field" placeholder="Ваша почта для ответа?">
-            <label class="feedback-form__label" for="feedback-email-field">Ваша почта для ответа?</label>
+            <input class="feedback-form__input text-input" type="email" name="feedback-email" id="feedback-email-field" placeholder="Ваша почта для ответа?">
+            <label class="visually-hidden" for="feedback-email-field">Ваша почта для ответа?</label>
           </li>
           <li class="feedback-form__item">
-            <textarea class="feedback-form__input feedback-form__input--textarea" name="message" id="message-field" placeholder="Напишите что-нибудь..."></textarea>
-            <label class="feedback-form__label" for="message-field">Напишите что-нибудь...</label>
+            <textarea class="feedback-form__input feedback-form__input--textarea text-input" name="message" id="message-field" rows="5" cols="62" placeholder="Напишите что-нибудь..."></textarea>
+            <label class="visually-hidden" for="message-field">Напишите что-нибудь...</label>
           </li>
         </ul>
         <button class="feedback-form__button button button--feedback-form" type="submit">
