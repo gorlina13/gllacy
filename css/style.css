@@ -2335,7 +2335,7 @@ label.visually-hidden {
   animation: roll-in 0.6s ease-out forwards;
 }
 
-.modal--without-animation {
+.modal--no-animation {
   display: block;
 }
 
