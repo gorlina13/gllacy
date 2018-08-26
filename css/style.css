@@ -1357,6 +1357,7 @@ label.visually-hidden {
 
   display: flex;
 
+  width: 300%;
   margin: 0;
   padding: 0;
 
@@ -1390,10 +1391,6 @@ label.visually-hidden {
 
 .best-deals__slider {
   min-height: 531px;
-}
-
-.best-deals__list {
-  width: 300%;
 }
 
 .best-deals__item {
