@@ -47,6 +47,8 @@ html {
 }
 
 .body {
+  position: relative;
+
   min-width: 900px;
   margin: 0;
   padding: 0;
@@ -59,47 +61,58 @@ html {
   color: #ffffff;
 
   background-color: #849d8f;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.body::before,
-.body::after {
-  content: "";
-
-  visibility: hidden;
 }
 
 .body::before {
-  background-image: url("../img/slide-2.png");
-}
+  content: "";
 
-.body::after {
-  background-image: url("../img/slide-3.png");
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  max-width: 1045px;
+  height: 881px;
+  margin: 0 auto;
 }
 
 .body--background-1 {
   background-color: #849d8f;
-  background-image: url("../img/slide-1.png");
+}
+
+.body--background-1::before {
+  background: url("../img/slide-1.png") center 83px no-repeat, radial-gradient(rgba(205, 244, 223, 0.9) 20%, rgba(205, 244, 223, 0) 70%);
 }
 
 .body--background-2 {
   background-color: #8996a6;
-  background-image: url("../img/slide-2.png");
+}
+
+.body--background-2::before {
+  background: url("../img/slide-2.png") center 83px no-repeat, radial-gradient(rgba(204, 225, 242, 0.9) 20%, rgba(204, 225, 242, 0) 70%);
 }
 
 .body--background-3 {
   background-color: #9d8b84;
-  background-image: url("../img/slide-3.png");
 }
 
-.body--iiner-page {
+.body--background-3::before {
+  background: url("../img/slide-3.png") center 83px no-repeat, radial-gradient(rgba(233, 212, 203, 0.9) 20%, rgba(233, 212, 203, 0) 70%);
+}
+
+.body--inner-page {
   background-color: #849d8f;
   background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.2) 0%,
-    transparent 656px
+    rgba(255, 255, 255, 0) 656px
   );
+}
+
+.body--inner-page::before {
+  display: none;
 }
 
 img {
@@ -254,10 +267,12 @@ label.visually-hidden {
 .button--contacts {
   display: block;
   padding-bottom: 9px;
+  margin-bottom: 3px;
 }
 
 .button--feedback-form {
   min-width: 138px;
+  margin-bottom: 2px;
 }
 
 .button--cart-submit {
@@ -355,6 +370,21 @@ label.visually-hidden {
   color: #ffffff;
 }
 
+.page-header::before,
+.page-header::after {
+  content: "";
+
+  visibility: hidden;
+}
+
+.page-header::before {
+  background-image: url("../img/slide-2.png");
+}
+
+.page-header::after {
+  background-image: url("../img/slide-3.png");
+}
+
 .page-header__wrapper,
 .page-header--inner-page {
   display: flex;
@@ -392,6 +422,7 @@ label.visually-hidden {
 .page-header__contact-phone {
   flex-shrink: 0;
 
+  min-width: 25%;
   margin: 0;
   margin-left: auto;
   padding-right: 2.3%;
@@ -413,7 +444,7 @@ label.visually-hidden {
 .main-nav {
   flex-shrink: 0;
   flex-grow: 1;
-  flex-basis: auto;
+  flex-basis: 430px;
 
   margin-right: auto;
 }
@@ -826,7 +857,7 @@ label.visually-hidden {
   display: flex;
   flex-wrap: wrap;
 
-  min-width: 219px;
+  max-width: 220px;
   margin: 0;
   padding: 0;
   padding-top: 23px;
@@ -838,6 +869,7 @@ label.visually-hidden {
   position: relative;
 
   flex-shrink: 0;
+  margin-bottom: 18px;
 }
 
 .user-list__item:nth-child(2n+2) {
@@ -1021,8 +1053,8 @@ label.visually-hidden {
     to top,
     rgba(0, 0, 0, 0.3) 0,
     rgba(0, 0, 0, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(0, 0, 0, 0) 1px,
+    rgba(0, 0, 0, 0) 100%
   );
   cursor: pointer;
 }
@@ -1036,8 +1068,8 @@ label.visually-hidden {
     to top,
     rgba(236, 89, 60, 0.3) 0,
     rgba(236, 89, 60, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(236, 89, 60, 0) 1px,
+    rgba(236, 89, 60, 0) 100%
   );
 }
 
@@ -1448,12 +1480,12 @@ label.visually-hidden {
   margin-left: 2.3%;
 }
 
-.banner:first-child {
+.banner--raspberry {
   background-color: #ae0e2f;
   background-image: url("../img/bg-raspberry.jpg");
 }
 
-.banner:nth-child(2) {
+.banner--chocolate {
   background-color: #724934;
   background-image: url("../img/bg-chocolate.jpg");
 }
@@ -1544,8 +1576,8 @@ label.visually-hidden {
     to top,
     rgba(255, 255, 255, 0.3) 0,
     rgba(255, 255, 255, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(255, 255, 255, 0) 1px,
+    rgba(255, 255, 255, 0) 100%
   );
   cursor: pointer;
 }
@@ -1559,8 +1591,8 @@ label.visually-hidden {
     to top,
     rgba(249, 172, 159, 0.3) 0,
     rgba(249, 172, 159, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(249, 172, 159, 0) 1px,
+    rgba(249, 172, 159, 0) 100%
   );
 }
 
@@ -1836,12 +1868,13 @@ label.visually-hidden {
   background-image: linear-gradient(
     to top,
     rgba(255, 255, 255, 0.8) 0,
-    rgba(255, 255, 255, 0.8) 2px,
-    #323232 2px,
-    #323232 4px,
-    rgba(255, 255, 255, 0.8) 4px,
+    rgba(255, 255, 255, 0.8) 3px,
+    #323232 3px,
+    #323232 5px,
+    rgba(255, 255, 255, 0.8) 5px,
     rgba(255, 255, 255, 0.8) 30px
   );
+  box-shadow: 12px 0 0 0 rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 
@@ -1887,9 +1920,13 @@ label.visually-hidden {
   color: #5a5a5a;
 
   background-color: #f8f7f4;
-  background-image: url("../img/bg-post.svg");
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-image: repeating-linear-gradient(
+  135deg,
+  #f8f7f4 0, #f8f7f4 7px,
+  #92cdff 7px, #92cdff 14px,
+  #f8f7f4 14px, #f8f7f4 21px,
+  #fe9e90 21px, #fe9e90 28px
+  );
   border-radius: 15px;
 }
 
@@ -1999,7 +2036,7 @@ label.visually-hidden {
   width: 302px;
   margin-right: 2.3%;
   margin-top: -2px;
-  padding: 29px 25px 32px;
+  padding: 29px 25px;
 
   background-color: rgba(255, 255, 255, 0.98);
   border-radius: 15px;
@@ -2133,6 +2170,10 @@ label.visually-hidden {
   margin-left: auto;
 }
 
+.info-list__item:nth-child(odd):last-child {
+  margin-right: 57%;
+}
+
 .info-list__item:nth-child(even) {
   width: 57%;
 }
@@ -2149,8 +2190,8 @@ label.visually-hidden {
     to top,
     rgba(255, 255, 255, 0.3) 0,
     rgba(255, 255, 255, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(255, 255, 255, 0) 1px,
+    rgba(255, 255, 255, 0) 100%
   );
   cursor: pointer;
 }
@@ -2186,8 +2227,8 @@ label.visually-hidden {
     to top,
     rgba(249, 172, 159, 0.3) 0,
     rgba(249, 172, 159, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(249, 172, 159, 0) 1px,
+    rgba(249, 172, 159, 0) 100%
   );
 }
 
@@ -2244,8 +2285,8 @@ label.visually-hidden {
     to top,
     rgba(255, 255, 255, 0.3) 0,
     rgba(255, 255, 255, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(255, 255, 255, 0) 1px,
+    rgba(255, 255, 255, 0) 100%
   );
   cursor: pointer;
 }
@@ -2259,8 +2300,8 @@ label.visually-hidden {
     to top,
     rgba(249, 172, 159, 0.3) 0,
     rgba(249, 172, 159, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(249, 172, 159, 0) 1px,
+    rgba(249, 172, 159, 0) 100%
   );
 }
 
@@ -2298,7 +2339,7 @@ label.visually-hidden {
 
 .modal--feedback {
   width: 477px;
-  padding: 16px 25px 27px;
+  padding: 16px 25px 25px;
 }
 
 @keyframes roll-in {
@@ -2420,7 +2461,9 @@ label.visually-hidden {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
 
+  max-width: 75%;
   margin: 0;
   margin-top: -17px;
   padding: 0 2.3%;
@@ -2485,8 +2528,8 @@ label.visually-hidden {
     to top,
     rgba(255, 255, 255, 0.3) 0,
     rgba(255, 255, 255, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(255, 255, 255, 0) 1px,
+    rgba(255, 255, 255, 0) 100%
   );
   cursor: pointer;
 }
@@ -2500,8 +2543,8 @@ label.visually-hidden {
     to top,
     rgba(249, 172, 159, 0.3) 0,
     rgba(249, 172, 159, 0.3) 1px,
-    transparent 1px,
-    transparent 100%
+    rgba(249, 172, 159, 0) 1px,
+    rgba(249, 172, 159, 0) 100%
   );
 }
 

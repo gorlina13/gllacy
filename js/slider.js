@@ -30,7 +30,7 @@
 
       var controlIndex = controls.indexOf(currentControl);
       var index = controlIndex + 1;
-      if (slides[controlIndex] !== null) {
+      if (slides[controlIndex]) {
         slides[controlIndex].parentElement.classList.add(PARENT_CLASS + index);
       }
       body.classList.add(BACKGROUND_CLASS + index);
@@ -39,11 +39,11 @@
     function setTabindex() {
       if (buttonsWithin.length > 0) {
         [].forEach.call(buttonsWithin, function (item) {
-          item.setAttribute('tabindex', -1);
+          item.removeAttribute('tabindex');
           var slideIndex = slides.indexOf(item.parentElement);
           var index = slideIndex + 1;
-          if (item.parentElement.parentElement.classList.contains(PARENT_CLASS + index)) {
-            item.removeAttribute('tabindex');
+          if (!(item.parentElement.parentElement.classList.contains(PARENT_CLASS + index))) {
+            item.setAttribute('tabindex', -1);
           }
         });
       }
