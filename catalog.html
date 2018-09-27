@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>Глейси — Каталог</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body  class="body body--inner-page">
     <svg style="display: none;">
@@ -47,7 +47,7 @@
             <ul class="main-nav__list site-list">
               <li class="site-list__item site-list__item--current has-drop has-drop--no-js">
                 <a class="site-list__link" href="#">Каталог</a>
-                <ul class="site-list__submenu submenu">
+                <ul class="site-list__submenu submenu" data-focus>
                   <li class="submenu__item submenu__item--new">
                     <a class="submenu__link" href="#">Новинки</a>
                   </li>
@@ -73,14 +73,14 @@
               </li>
             </ul>
           </nav>
-          <form class="page-header__search search has-drop" action="#" method="post" role="search">
+          <form class="page-header__search search" action="#" method="post" role="search" data-focus>
             <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
             <label class="search__label" for="search-field">
               <span class="visually-hidden">Что ищем?</span>
             </label>
             <button class="search__submit" type="submit">
               <span class="visually-hidden">Найти</span>
-              <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation">
+              <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-search"></use>
               </svg>
             </button>
@@ -89,11 +89,11 @@
             <li class="user-list__item user-list__item--login has-drop has-drop--no-js">
               <a class="user-list__link" href="#">
                 <span class="user-list__text">Вход</span>
-                <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation">
+                <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation" focusable="false">
                   <use xlink:href="#icon-login"></use>
                 </svg>
               </a>
-              <form class="user-list__form login-form" action="#" method="post" aria-labelledby="login-form-heading">
+              <form class="user-list__form login-form" action="#" method="post" aria-labelledby="login-form-heading" data-focus>
                 <b class="visually-hidden" id="login-form-heading">Личный кабинет</b>
                 <ul class="login-form__list">
                   <li class="login-form__item">
@@ -122,11 +122,11 @@
               <a class="user-list__link" href="#">
                 <span class="visually-hidden">Корзина:</span>
                 <span class="user-list__text">2 товара</span>
-                <svg class="user-list__icon user-list__icon--with-goods" width="21" height="20" aria-hidden="true" role="presentation">
+                <svg class="user-list__icon user-list__icon--with-goods" width="21" height="20" aria-hidden="true" role="presentation" focusable="false">
                   <use xlink:href="#icon-cart-with-goods"></use>
                 </svg>
               </a>
-              <form class="user-list__form cart" action="#" method="post" aria-labelledby="cart-form-heading">
+              <form class="user-list__form cart" action="#" method="post" aria-labelledby="cart-form-heading" data-focus>
                 <b class="visually-hidden" id="cart-form-heading">В вашей корзине:</b>
                 <table class="cart__list">
                   <tbody>
@@ -134,7 +134,7 @@
                       <td class="cart__data cart__data--delete">
                         <input class="cart__checkbox visually-hidden" type="checkbox" name="product-1" id="product-1-field" value="product-1" checked>
                         <label class="cart__label" for="product-1-field">
-                          <span class="visually-hidden">Отменить пломбир с апельсиновым джемом</span>
+                          <span class="visually-hidden">Оставить/отменить пломбир с апельсиновым джемом</span>
                         </label>
                       </td>
                       <td class="cart__data cart__data--preview">
@@ -148,7 +148,7 @@
                       <td class="cart__data cart__data--delete">
                         <input class="cart__checkbox visually-hidden" type="checkbox" name="product-2" id="product-2-field" value="product-2" checked>
                         <label class="cart__label" for="product-2-field">
-                          <span class="visually-hidden">Отменить клубничный пломбир с присыпкой из белого шоколада</span>
+                          <span class="visually-hidden">Оставить/отменить клубничный пломбир с присыпкой из белого шоколада</span>
                         </label>
                       </td>
                       <td class="cart__data cart__data--preview">
@@ -219,8 +219,8 @@
                 <div class="range__scale">
                   <div class="range__bar" style="left: 7.4%; width: 67%;"></div>
                 </div>
-                <div class="range__toggle range__toggle--min" tabindex="0"></div>
-                <div class="range__toggle range__toggle--max" tabindex="0"></div>
+                <div class="range__toggle range__toggle--min" tabindex="0" role="button"></div>
+                <div class="range__toggle range__toggle--max" tabindex="0" role="button"></div>
               </div>
             </fieldset>
             <fieldset class="filter-form__fieldset filter-form__fieldset--fat">
@@ -278,7 +278,7 @@
           <h2 class="visually-hidden">Список товаров</h2>
           <ul class="catalog__list">
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                 </h3>
@@ -297,7 +297,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-кофейное с кусочками шоколада</a>
                 </h3>
@@ -316,7 +316,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                 </h3>
@@ -335,7 +335,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
                 </h3>
@@ -354,7 +354,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с брусничным джемом</a>
                 </h3>
@@ -373,7 +373,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-черничное с цельными ягодами черники</a>
                 </h3>
@@ -392,7 +392,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-лимонное с карамельной присыпкой</a>
                 </h3>
@@ -411,7 +411,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с шоколадной стружкой</a>
                 </h3>
@@ -430,7 +430,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-ванильное с кусочками шоколада</a>
                 </h3>
@@ -449,7 +449,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочноe с ментоловым сиропом</a>
                 </h3>
@@ -468,7 +468,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с кусочками черного шоколада</a>
                 </h3>
@@ -487,7 +487,7 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с мятным сиропом</a>
                 </h3>
@@ -541,7 +541,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://twitter.com">
               <span class="visually-hidden">Twitter</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-twitter"></use>
               </svg>
             </a>
@@ -549,7 +549,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://www.instagram.com">
               <span class="visually-hidden">Instagram</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-insta"></use>
               </svg>
             </a>
@@ -557,7 +557,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://www.facebook.com">
               <span class="visually-hidden">Facebook</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-fb"></use>
               </svg>
             </a>
@@ -565,7 +565,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://vk.com">
               <span class="visually-hidden">Вконтакте</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-vk"></use>
               </svg>
             </a>
@@ -594,6 +594,6 @@
       </footer>
     </div>
 
-    <script src="js/scripts.min.js"></script>
+    <script src="js/drop.js"></script>
   </body>
 </html>

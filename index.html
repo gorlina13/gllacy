@@ -5,7 +5,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>Глейси — Главная</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="body body--background-1">
     <svg style="display: none;">
@@ -47,7 +47,7 @@
             <ul class="main-nav__list site-list">
               <li class="site-list__item has-drop has-drop--no-js">
                 <a class="site-list__link" href="#">Каталог</a>
-                <ul class="site-list__submenu submenu">
+                <ul class="site-list__submenu submenu" data-focus>
                   <li class="submenu__item submenu__item--new">
                     <a class="submenu__link" href="#">Новинки</a>
                   </li>
@@ -73,14 +73,14 @@
               </li>
             </ul>
           </nav>
-          <form class="page-header__search search has-drop" action="#" method="post" role="search">
+          <form class="page-header__search search" action="#" method="post" role="search" data-focus>
             <input class="search__input" type="search" name="search" id="search-field" placeholder="Что ищем?">
             <label class="search__label" for="search-field">
               <span class="visually-hidden">Что ищем?</span>
             </label>
             <button class="search__submit" type="submit">
               <span class="visually-hidden">Найти</span>
-              <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation">
+              <svg class="search__icon" width="17" height="17" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-search"></use>
               </svg>
             </button>
@@ -89,11 +89,11 @@
             <li class="user-list__item user-list__item--login has-drop has-drop--no-js">
               <a class="user-list__link" href="#">
                 <span  class="user-list__text">Вход</span>
-                <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation">
+                <svg class="user-list__icon user-list__icon--login" width="21" height="19" aria-hidden="true" role="presentation" focusable="false">
                   <use xlink:href="#icon-login"></use>
                 </svg>
               </a>
-              <form class="user-list__form login-form" action="#" method="post" aria-labelledby="login-form-heading">
+              <form class="user-list__form login-form" action="#" method="post" aria-labelledby="login-form-heading" data-focus>
                 <b class="visually-hidden" id="login-form-heading">Личный кабинет</b>
                 <ul class="login-form__list">
                   <li class="login-form__item">
@@ -122,7 +122,7 @@
               <a class="user-list__link" href="#">
                 <span class="visually-hidden">Корзина:</span>
                 <span class="user-list__text">Пусто</span>
-                <svg class="user-list__icon user-list__icon--empty-cart" width="21" height="20" aria-hidden="true" role="presentation">
+                <svg class="user-list__icon user-list__icon--empty-cart" width="21" height="20" aria-hidden="true" role="presentation" focusable="false">
                   <use xlink:href="#icon-cart-empty"></use>
                 </svg>
               </a>
@@ -140,7 +140,7 @@
       <div class="wrapper">
         <section class="best-deals">
           <h2 class="visually-hidden">Лучшие предложения и подарки</h2>
-          <div class="best-deals__slider slider">
+          <div class="best-deals__slider slider" id="main-slider">
             <ul class="slider__controls">
               <li>
                 <button class="slider__control slider__control--active" type="button">
@@ -193,7 +193,7 @@
           <h2 class="visually-hidden">Наши хиты</h2>
           <ul class="hits__list">
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                 </h3>
@@ -212,7 +212,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-кофейное с кусочками шоколада</a>
                 </h3>
@@ -231,7 +231,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                 </h3>
@@ -250,7 +250,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js">
+              <article class="product has-drop has-drop--no-js" role="article" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
                 </h3>
@@ -284,7 +284,7 @@
 
         <section class="news">
           <h2 class="visually-hidden">Новости</h2>
-          <article class="news__preview article-preview">
+          <article class="news__preview article-preview" role="article">
             <h3 class="article-preview__title">
               <a class="article-preview__link" href="#">10 способов сервировки фруктовых щербетов к столу</a>
             </h3>
@@ -331,7 +331,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://twitter.com">
               <span class="visually-hidden">Twitter</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation"focusable="false">
                 <use xlink:href="#icon-twitter"></use>
               </svg>
             </a>
@@ -339,7 +339,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://www.instagram.com">
               <span class="visually-hidden">Instagram</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-insta"></use>
               </svg>
             </a>
@@ -347,7 +347,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://www.facebook.com">
               <span class="visually-hidden">Facebook</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-fb"></use>
               </svg>
             </a>
@@ -355,7 +355,7 @@
           <li class="social-list__item">
             <a class="social-list__link" href="https://vk.com">
               <span class="visually-hidden">Вконтакте</span>
-              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation">
+              <svg class="social-list__icon" width="32" height="32" aria-hidden="true" role="presentation" focusable="false">
                 <use xlink:href="#icon-vk"></use>
               </svg>
             </a>
@@ -384,8 +384,8 @@
       </div>
     </footer>
 
-    <section class="modal modal--feedback">
-      <h2 class="visually-hidden">Обратная связь</h2>
+    <section class="modal modal--feedback" role="dialog" aria-labelledby="feedback-title">
+      <h2 class="visually-hidden" id="feedback-title">Обратная связь</h2>
       <form class="modal__feedback-form feedback-form" action="#" method="post" aria-labelledby="feedback-form-heading">
         <b class="feedback-form__tagline" id="feedback-form-heading">Мы обязательно вам ответим!</b>
         <ul class="feedback-form__list">
@@ -413,6 +413,10 @@
     <div class="overlay"></div>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPChudeBDq6E5cWVAiQcCxzzbQm4o-93c&callback=initMap"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/drop.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

@@ -1,68 +1,104 @@
 'use strict';
 
 (function () {
-  var body = document.querySelector('body');
+  var BODY_CLASS = 'body--background-';
+  var SLIDER_LIST_CLASS = 'slider__list--show-';
+  var body = document.querySelector('.body');
   var sliders = document.querySelectorAll('.slider');
-  var BACKGROUND_CLASS = 'body--background-';
-  var PARENT_CLASS = 'slider__list--show-';
+  var mainSlider = document.querySelector('#main-slider');
 
   function handleSlider(slider) {
+    var bodyBackgroundChanges = (slider === mainSlider) ? true : false;
     var controls = slider.querySelectorAll('.slider__control');
-    controls = Array.prototype.slice.call(controls);
     var slides = slider.querySelectorAll('.slider__item');
-    slides = Array.prototype.slice.call(slides);
     var buttonsWithin = slider.querySelectorAll('.button');
+    controls = Array.prototype.slice.call(controls);
+    slides = Array.prototype.slice.call(slides);
+    buttonsWithin = Array.prototype.slice.call(buttonsWithin);
 
-    function makeControlActive(currentControl) {
+    function makeControlActive(control) {
+      control.classList.add('slider__control--active');
+    }
+
+    function makeControlsInactive() {
       controls.forEach(function (item) {
         item.classList.remove('slider__control--active');
       });
+    }
 
-      currentControl.classList.add('slider__control--active');
+    function handleControls(currentControl) {
+      makeControlsInactive();
+      makeControlActive(currentControl);
+    }
+
+    function prepareSlides() {
+      slides.forEach(function (item, i) {
+        var number = i + 1;
+        item.parentElement.classList.remove(SLIDER_LIST_CLASS + number);
+        if (bodyBackgroundChanges) {
+          body.classList.remove(BODY_CLASS + number);
+        }
+      });
+    }
+
+    function setIndex(arr) {
+      arr.forEach(function (item, i) {
+        item.itemIndex = i;
+      });
     }
 
     function showSlide(currentControl) {
-      slides.forEach(function (item) {
-        var index = slides.indexOf(item) + 1;
-        item.parentElement.classList.remove(PARENT_CLASS + index);
-        body.classList.remove(BACKGROUND_CLASS + index);
-      });
-
-      var controlIndex = controls.indexOf(currentControl);
-      var index = controlIndex + 1;
-      if (slides[controlIndex]) {
-        slides[controlIndex].parentElement.classList.add(PARENT_CLASS + index);
+      prepareSlides();
+      var index = currentControl.itemIndex;
+      var number = index + 1;
+      if (slides[index]) {
+        slides[index].parentElement.classList.add(SLIDER_LIST_CLASS + number);
       }
-      body.classList.add(BACKGROUND_CLASS + index);
+      if (bodyBackgroundChanges) {
+        body.classList.add(BODY_CLASS + number);
+      }
     }
 
     function setTabindex() {
       if (buttonsWithin.length > 0) {
-        [].forEach.call(buttonsWithin, function (item) {
+        buttonsWithin.forEach(function (item) {
           item.removeAttribute('tabindex');
-          var slideIndex = slides.indexOf(item.parentElement);
-          var index = slideIndex + 1;
-          if (!(item.parentElement.parentElement.classList.contains(PARENT_CLASS + index))) {
-            item.setAttribute('tabindex', -1);
+          var element = item.parentElement;
+          while (!(element.classList.contains('slider__list'))) {
+            if (element.classList.contains('slider__item')) {
+              var number = element.itemIndex + 1;
+              if (!(element.parentElement.classList.contains(SLIDER_LIST_CLASS + number))) {
+                item.setAttribute('tabindex', -1);
+              }
+              return;
+            }
+            element = element.parentElement;
           }
         });
       }
     }
 
     function syncSliderElements(currentControl) {
-      makeControlActive(currentControl);
+      handleControls(currentControl);
       showSlide(currentControl);
       setTabindex();
     }
 
+    function onControlClick(evt) {
+      var target = evt.target;
+      if (target.classList.contains('slider__control')) {
+        evt.preventDefault();
+        syncSliderElements(target);
+      }
+    }
+
     function runSlider() {
+      setIndex(controls);
+      setIndex(slides);
       setTabindex();
 
-      controls.forEach(function (item) {
-        item.addEventListener('click', function (event) {
-          event.preventDefault();
-          syncSliderElements(item);
-        });
+      slider.addEventListener('click', function (evt) {
+        onControlClick(evt);
       });
     }
 
@@ -70,7 +106,8 @@
   }
 
   if (sliders.length > 0) {
-    [].forEach.call(sliders, function (item) {
+    sliders = Array.prototype.slice.call(sliders);
+    sliders.forEach(function (item) {
       handleSlider(item);
     });
   }

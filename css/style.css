@@ -179,9 +179,7 @@ label.visually-hidden {
   border: 0;
 
   white-space: nowrap;
-
   -webkit-clip-path: inset(100%);
-
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -597,9 +595,7 @@ label.visually-hidden {
   position: relative;
 
   -webkit-box-flex: 0;
-
       -ms-flex-positive: 0;
-
           flex-grow: 0;
   -ms-flex-negative: 1;
       flex-shrink: 1;
@@ -645,11 +641,11 @@ label.visually-hidden {
   );
 }
 
-.site-list__link::before {
+.site-list__link::before,
+.site-list__link::after {
   content: "";
 
   position: absolute;
-  z-index: -1;
   left: 0;
   right: 0;
   bottom: 0;
@@ -659,6 +655,10 @@ label.visually-hidden {
   height: 100%;
 
   border-radius: 16px;
+}
+
+.site-list__link::before {
+  z-index: -1;
 }
 
 .site-list__link[href] {
@@ -706,9 +706,7 @@ label.visually-hidden {
   border: 0;
 
   white-space: nowrap;
-
   -webkit-clip-path: inset(100%);
-
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -847,9 +845,7 @@ label.visually-hidden {
   position: relative;
 
   -webkit-box-flex: 0;
-
       -ms-flex-positive: 0;
-
           flex-grow: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -875,7 +871,6 @@ label.visually-hidden {
   background-color: rgba(255, 255, 255, 0.2);
   border: 0;
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .search__icon {
@@ -910,9 +905,7 @@ label.visually-hidden {
   border: 0;
 
   white-space: nowrap;
-
   -webkit-clip-path: inset(100%);
-
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -954,7 +947,6 @@ label.visually-hidden {
   color: #323232;
 
   background-color: #ffffff;
-  cursor: pointer;
 }
 
 .search:hover .search__input:hover,
@@ -1080,9 +1072,7 @@ label.visually-hidden {
   position: relative;
 
   -webkit-box-flex: 0;
-
       -ms-flex-positive: 0;
-
           flex-grow: 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -1227,9 +1217,7 @@ label.visually-hidden {
   right: -3px;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1392,7 +1380,6 @@ label.visually-hidden {
   background-color: #ffffff;
   border: 1px solid #d3d3d2;
   border-radius: 6px;
-  cursor: pointer;
 }
 
 .text-input::-webkit-input-placeholder {
@@ -1449,9 +1436,7 @@ label.visually-hidden {
   border: 0;
 
   white-space: nowrap;
-
   -webkit-clip-path: inset(100%);
-
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -1644,9 +1629,7 @@ label.visually-hidden {
   z-index: 5;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
 
   margin: 0;
@@ -1700,9 +1683,7 @@ label.visually-hidden {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
 
   width: 300%;
@@ -1780,7 +1761,6 @@ label.visually-hidden {
   content: "";
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   -ms-flex-preferred-size: 240px;
       flex-basis: 240px;
@@ -1917,7 +1897,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2099,9 +2078,7 @@ label.visually-hidden {
   border: 0;
 
   white-space: nowrap;
-
   -webkit-clip-path: inset(100%);
-
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -2213,7 +2190,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
 
   width: 48.8%;
@@ -2273,7 +2249,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2385,7 +2360,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2451,7 +2425,6 @@ label.visually-hidden {
   z-index: 1;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
 
   width: 100%;
@@ -2467,9 +2440,7 @@ label.visually-hidden {
   z-index: 1;
 
   -webkit-box-flex: 1;
-
       -ms-flex-positive: 1;
-
           flex-grow: 1;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -2486,9 +2457,7 @@ label.visually-hidden {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2503,7 +2472,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2560,7 +2528,6 @@ label.visually-hidden {
   z-index: 10;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
 
   width: 302px;
@@ -2963,9 +2930,7 @@ label.visually-hidden {
   border-radius: 8px;
 
   -webkit-transform: translate(-50%, -50%);
-
       -ms-transform: translate(-50%, -50%);
-
           transform: translate(-50%, -50%);
 }
 
@@ -3043,7 +3008,8 @@ label.visually-hidden {
 }
 
 .modal--no-animation {
-  display: block;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .modal--error {
@@ -3152,7 +3118,6 @@ label.visually-hidden {
   position: relative;
 
   -ms-flex-negative: 0;
-
       flex-shrink: 0;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
@@ -3182,9 +3147,7 @@ label.visually-hidden {
   border-right: 1px solid #ffffff;
 
   -webkit-transform: translateY(-50%) rotate(-45deg);
-
       -ms-transform: translateY(-50%) rotate(-45deg);
-
           transform: translateY(-50%) rotate(-45deg);
 }
 
@@ -3557,8 +3520,6 @@ label.visually-hidden {
   font: inherit;
   font-size: 0;
   color: inherit;
-
-  cursor: pointer;
 }
 
 .range__input {

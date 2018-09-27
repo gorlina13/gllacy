@@ -2,7 +2,7 @@
 
 (function () {
   var hasDropElements = document.querySelectorAll('.has-drop');
-  var hasFocusElements = document.querySelectorAll('.submenu, .search, .user-list__form, .product');
+  var hasFocusElements = document.querySelectorAll('[data-focus]');
 
   function prepareHasDrop() {
     if (hasDropElements.length > 0) {
@@ -21,10 +21,21 @@
     this.classList.remove('has-focus');
   }
 
+  function markSubmenu(submenu) {
+    var firstDropLink = submenu.querySelector('.submenu__link');
+    if (firstDropLink !== null)  {
+      var insertion = ' <span class="visually-hidden">Вложенное меню, </span>';
+      firstDropLink.insertAdjacentHTML('afterbegin', insertion);
+    }
+  }
+
   function handleDrops() {
     prepareHasDrop();
     var elements = Array.prototype.slice.call(hasFocusElements);
     elements.forEach(function (item) {
+      if (item.classList.contains('submenu')) {
+        markSubmenu(item);
+      }
       item.addEventListener('focus', onElementFocus, true);
       item.addEventListener('blur', onElementBlur, true);
     });
