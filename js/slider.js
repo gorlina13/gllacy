@@ -4,8 +4,9 @@
   var BODY_CLASS = 'body--background-';
   var SLIDER_LIST_CLASS = 'slider__list--show-';
   var body = document.querySelector('.body');
-  var sliders = document.querySelectorAll('.slider');
   var mainSlider = document.querySelector('#main-slider');
+  var sliders = document.querySelectorAll('.slider');
+  sliders = Array.prototype.slice.call(sliders);
 
   function handleSlider(slider) {
     var bodyBackgroundChanges = (slider === mainSlider) ? true : false;
@@ -31,7 +32,7 @@
       makeControlActive(currentControl);
     }
 
-    function prepareSlides() {
+    function removeClassesBeforeShow() {
       slides.forEach(function (item, i) {
         var number = i + 1;
         item.parentElement.classList.remove(SLIDER_LIST_CLASS + number);
@@ -48,7 +49,7 @@
     }
 
     function showSlide(currentControl) {
-      prepareSlides();
+      removeClassesBeforeShow();
       var index = currentControl.itemIndex;
       var number = index + 1;
       if (slides[index]) {
@@ -84,11 +85,15 @@
       setTabindex();
     }
 
-    function onControlClick(evt) {
+    function onSliderClick(evt) {
       var target = evt.target;
-      if (target.classList.contains('slider__control')) {
-        evt.preventDefault();
-        syncSliderElements(target);
+      while (target !== evt.currentTarget) {
+        if (target.classList.contains('slider__control')) {
+          evt.preventDefault();
+          syncSliderElements(target);
+          return;
+        }
+        target = target.parentElement;
       }
     }
 
@@ -98,7 +103,7 @@
       setTabindex();
 
       slider.addEventListener('click', function (evt) {
-        onControlClick(evt);
+        onSliderClick(evt);
       });
     }
 
@@ -106,7 +111,6 @@
   }
 
   if (sliders.length > 0) {
-    sliders = Array.prototype.slice.call(sliders);
     sliders.forEach(function (item) {
       handleSlider(item);
     });
