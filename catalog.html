@@ -2,7 +2,6 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
     <title>Глейси — Каталог</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.min.css">
@@ -172,9 +171,9 @@
             </li>
           </ul>
         </div>
-        <p class="page-header__contact-phone">
+        <p class="page-header__contact-tel">
           С 10 до 20, ежедневно
-          <b class="page-header__phone-number">8 812 450-25-25</b>
+          <a class="page-header__tel-link" href="tel:+78124502525">8&nbsp;812&nbsp;450-25-25</a>
         </p>
       </header>
       <main>
@@ -193,12 +192,14 @@
           <form class="filter__form filter-form" action="#" method="get">
             <fieldset class="filter-form__fieldset filter-form__fieldset--sort">
               <legend class="filter-form__legend">Сортировка:</legend>
-              <select class="filter-form__select" name="sort" id="sort-select">
-                <option value="popularity" selected>По популярности</option>
-                <option value="first-inexpensive">Сначала недорогие</option>
-                <option value="first-expensive">Сначала дорогие</option>
-                <option value="fat">По жирности</option>
-              </select>
+              <div class="filter-form__select-container" data-focus>
+                <select class="filter-form__select" name="sort" id="sort-select">
+                  <option value="popularity" selected>по популярности</option>
+                  <option value="first-inexpensive">сначала недорогие</option>
+                  <option value="first-expensive">сначала дорогие</option>
+                  <option value="fat">по жирности</option>
+                </select>
+              </div>
             </fieldset>
             <fieldset class="filter-form__fieldset filter-form__fieldset--price range">
               <legend class="filter-form__legend range__legend">Цена:</legend>
