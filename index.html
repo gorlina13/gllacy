@@ -192,7 +192,7 @@
           <h2 class="visually-hidden">Наши хиты</h2>
           <ul class="hits__list">
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js" role="article" data-focus>
+              <article class="product has-drop has-drop--no-js" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
                 </h3>
@@ -211,7 +211,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js" role="article" data-focus>
+              <article class="product has-drop has-drop--no-js" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-кофейное с кусочками шоколада</a>
                 </h3>
@@ -230,7 +230,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js" role="article" data-focus>
+              <article class="product has-drop has-drop--no-js" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                 </h3>
@@ -249,7 +249,7 @@
               </article>
             </li>
             <li class="hits__item">
-              <article class="product has-drop has-drop--no-js" role="article" data-focus>
+              <article class="product has-drop has-drop--no-js" data-focus>
                 <h3 class="product__title">
                   <a class="product__link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
                 </h3>
@@ -283,7 +283,7 @@
 
         <section class="news">
           <h2 class="visually-hidden">Новости</h2>
-          <article class="news__preview article-preview" role="article">
+          <article class="news__preview article-preview">
             <h3 class="article-preview__title">
               <a class="article-preview__link" href="#">10 способов сервировки фруктовых щербетов к столу</a>
             </h3>
@@ -304,9 +304,6 @@
       <section class="contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <div class="contacts__wrapper wrapper">
-          <p class="contacts__illustration">
-            <img class="contacts__image" src="img/map.jpg" width="1200" height="430" alt="Главный офис на карте: Санкт-Петербург, ул. Большая Конюшенная, д. 19">
-          </p>
           <div class="contacts__info">
             <p class="contacts__text">
               Адрес главного офиса<br>и офлайн магазина:
@@ -319,8 +316,11 @@
             </p>
             <a class="contacts__button button button--contacts" href="#">Форма обратной связи</a>
           </div>
+          <p class="contacts__illustration">
+            <img class="contacts__image" src="img/map.jpg" width="1200" height="430" alt="Главный офис на карте">
+          </p>
         </div>
-        <div class="contacts__interactive-map"></div>
+        <p class="contacts__interactive-map" aria-label="Главный офис на карте Google"></p>
       </section>
     </main>
 
