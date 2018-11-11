@@ -3320,8 +3320,6 @@ label.visually-hidden {
 }
 
 .filter-form__legend {
-  max-width: 100%;
-  width: 100%;
   padding-top: 3px;
   padding-right: 4px;
   padding-bottom: 5px;
@@ -3337,6 +3335,14 @@ label.visually-hidden {
 
 .filter-form__fieldset--sort .filter-form__legend {
   width: 193px;
+}
+
+.filter-form__fieldset--fat .filter-form__legend {
+  width: 410px;
+}
+
+.filter-form__fieldset--supplement .filter-form__legend {
+  width: 690px;
 }
 
 .filter-form__select-container {
